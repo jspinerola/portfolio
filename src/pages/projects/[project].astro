@@ -1,5 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
@@ -14,19 +15,9 @@ const { project } = Astro.props;
 const { Content } = await render(project);
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{project.data.title} - Astro + TailwindCSS</title>
-  </head>
-
-  <body>
-    <div class="max-w-3xl mx-auto my-8 p-4">
-      <h1 class="text-4xl font-bold mb-4">{project.data.title}</h1>
-      <Content />
-    </div>
-  </body>
-</html>
+<BaseLayout
+  title={`${project.data.title} - Astro + TailwindCSS`}
+  description={project.data.description}
+>
+  <Content />
+</BaseLayout>

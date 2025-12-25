@@ -1,0 +1,13 @@
+---
+import { ModeToggle } from "./ModeToggle.tsx";
+---
+
+<header>
+  <nav class="p-4 border-b flex justify-between items-center">
+    <ul class="flex space-x-4">
+      <li><a href="/about" class="hover:underline">about</a></li>
+      <li><a href="/projects" class="hover:underline">projects</a></li>
+    </ul>
+    <ModeToggle client:load />
+  </nav>
+</header>
