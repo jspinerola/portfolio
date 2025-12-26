@@ -7,15 +7,19 @@ import { FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 <!-- // TODO: simplify to one single iconlibary -->
 <div class="h-[calc(100vh-4rem)] min-h-128 w-full flex flex-col">
-  <div class="w-full h-[75%]">Placeholder Hero Component (for now...)</div>
-  <div class="w-full h-[25%] border-t">
-    <div class="h-full container mx-auto flex items-center justify-between">
+  <div class="w-full h-[65%] md:h-[75%]">
+    Placeholder Hero Component (for now...)
+  </div>
+  <div class="w-full h-[35%] md:h-[25%] border-t">
+    <div
+      class="h-full container mx-auto flex flex-col md:flex-row items-center justify-evenly md:justify-between text-center md:text-left"
+    >
       <h1
         class="text-3xl sm:text-5xl md:text-6xl uppercase font-heading font-black"
       >
         Julian<br />Spindola
       </h1>
-      <div class="content flex flex-col items-end space-y-4">
+      <div class="content flex flex-col md:items-end items-center space-y-4">
         <div class="button-group flex space-x-2">
           <Button
             variant="outline"

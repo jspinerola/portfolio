@@ -20,10 +20,10 @@ function Nav() {
   return (
     <>
       {/* desktop */}
-      <ul class="flex-1 space-x-4 font-heading hidden md:flex">
+      <ul className="flex-1 space-x-4 font-heading hidden md:flex">
         {navItems.map((item) => (
           <li key={item.name}>
-            <a href={item.href} class="hover:underline">
+            <a href={item.href} className="hover:underline">
               {item.name.toLowerCase()}
             </a>
           </li>
@@ -44,10 +44,10 @@ function Nav() {
             <SheetHeader>
               <SheetTitle className="lowercase font-black">Menu</SheetTitle>
             </SheetHeader>
-            <ul class="flex flex-col font-heading px-4 space-y-4">
+            <ul className="flex flex-col font-heading px-4 space-y-4">
               {navItems.map((item) => (
                 <li key={item.name}>
-                  <a href={item.href} class="hover:underline">
+                  <a href={item.href} className="hover:underline">
                     {item.name.toLowerCase()}
                   </a>
                 </li>
