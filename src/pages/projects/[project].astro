@@ -10,14 +10,128 @@ export async function getStaticPaths() {
     props: { project },
   }));
 }
+import type { CollectionEntry } from "astro:content";
+import OtherProjects from "@/components/OtherProjects.astro";
+import { Calendar, Users, ArrowUpRight } from "lucide-react";
+import LinkButton from "@/components/LinkButton.tsx";
+type Props = { project: CollectionEntry<"projects"> };
 
-const { project } = Astro.props;
+const { project } = Astro.props as Props;
 const { Content } = await render(project);
 ---
 
 <BaseLayout
-  title={`${project.data.title} - Astro + TailwindCSS`}
+  title={`${project.data.title} - Julian Spindola`}
   description={project.data.description}
 >
-  <Content />
+  <main>
+    <div class="hero w-full h-[45vh] bg-accent border-b"></div>
+    <div class="content container mx-auto my-8 px-4">
+      <div class="header flex flex-col space-x-4 mb-6">
+        <a
+          href="/projects"
+          class="text-sm text-muted-foreground font-mono underline items-center hover:underline block w-fit mb-4"
+        >
+          &larr; Back to Projects
+        </a>
+        <div
+          class="w-full flex md:flex-row flex-col md:items-center md:justify-between gap-6"
+        >
+          <div class="flex-2">
+            <h1
+              class="text-2xl md:text-3xl lg:text-4xl font-black font-heading uppercase"
+            >
+              {project.data.title}
+            </h1>
+            <p class="">{project.data.description}</p>
+            <ul class="flex my-2 space-x-2 flex-wrap">
+              {
+                project.data.tags?.map((tech) => (
+                  <li class="inline-block px-2 py-1 my-1 bg-secondary text-secondary-foreground rounded-md text-sm font-mono">
+                    {tech}
+                  </li>
+                ))
+              }
+            </ul>
+            <div
+              class="flex gap-2 lg:gap-6 items-center lg:flex-row flex-col lg:justify-start md:items-start"
+            >
+              <div class="flex gap-2 text-sm text-muted-foreground">
+                <Calendar size={"1em"} />
+                <span class="flex gap-2 font-mono">
+                  {project.data.startDate}{
+                    project.data.endDate && " - " + project.data.endDate
+                  }
+                </span>
+              </div>
+              <div
+                class="flex gap-2 text-sm text-muted-foreground items-center"
+              >
+                <Users size={"1em"} />
+                <span class="flex font-mono">
+                  <span>me</span>
+
+                  {
+                    project.data.collaborators &&
+                    project.data.collaborators.length > 0
+                      ? ",\u00A0"
+                      : ""
+                  }
+                  {
+                    project.data.collaborators?.map(
+                      (collaborator, idx, arr) => (
+                        <>
+                          {collaborator.github ? (
+                            <a href={collaborator.github} class="underline">
+                              {collaborator.name}
+                            </a>
+                          ) : (
+                            collaborator.name
+                          )}
+                          {idx < arr.length - 1 && ",\u00A0"}
+                        </>
+                      )
+                    )
+                  }
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="actions flex-1 text-center items-center md:text-end md:items-end md:justify-center flex flex-col gap-4"
+          >
+            {
+              project.data.githubLink && (
+                <LinkButton
+                  href={project.data.githubLink}
+                  className="font-mono lowercase"
+                  variant="outline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Source Code <ArrowUpRight />
+                </LinkButton>
+              )
+            }
+            {
+              project.data.liveLink && (
+                <LinkButton
+                  href={project.data.liveLink}
+                  target="_blank"
+                  className="font-mono lowercase"
+                >
+                  View Deployed Project <ArrowUpRight />
+                </LinkButton>
+              )
+            }
+          </div>
+        </div>
+      </div>
+      <div class="prose dark:prose-invert max-w-none">
+        <Content />
+      </div>
+      <OtherProjects />
+    </div>
+  </main>
+  <!-- <Content /> -->
 </BaseLayout>
