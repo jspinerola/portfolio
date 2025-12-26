@@ -14,6 +14,7 @@ import type { CollectionEntry } from "astro:content";
 import OtherProjects from "@/components/OtherProjects.astro";
 import { Calendar, Users, ArrowUpRight } from "lucide-react";
 import LinkButton from "@/components/LinkButton.tsx";
+import Prose from "@/components/Prose.astro";
 type Props = { project: CollectionEntry<"projects"> };
 
 const { project } = Astro.props as Props;
@@ -26,7 +27,7 @@ const accentStyle = { "--accent": project.data.accentColor };
   description={project.data.description}
 >
   <main>
-    <div class="hero w-full h-[45vh] bg-accent border-b z-10"></div>
+    <div class="hero w-full h-[45vh] bg-accent border-b z-10 opacity-50"></div>
     <div class="content container mx-auto my-8 px-4">
       <div class="header flex flex-col space-x-4 mb-6 relative">
         <div
@@ -133,11 +134,15 @@ const accentStyle = { "--accent": project.data.accentColor };
           </div>
         </div>
       </div>
-      <div class="prose dark:prose-invert max-w-none">
-        <Content />
+      <div class="divider my-6 border-t w-full">
+        <Prose>
+          <Content />
+        </Prose>
       </div>
-      <OtherProjects />
+      <div>
+        <OtherProjects />
+      </div>
     </div>
+    <!-- <Content /> -->
   </main>
-  <!-- <Content /> -->
 </BaseLayout>
