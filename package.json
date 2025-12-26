@@ -11,6 +11,8 @@
   "dependencies": {
     "@astrojs/mdx": "^4.3.13",
     "@astrojs/react": "^4.4.2",
+    "@fontsource-variable/outfit": "^5.2.8",
+    "@icons-pack/react-simple-icons": "^13.8.0",
     "@radix-ui/react-slot": "^1.2.4",
     "@tailwindcss/vite": "^4.1.18",
     "@types/canvas-confetti": "^1.9.0",
@@ -23,6 +25,7 @@
     "lucide-react": "^0.562.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
+    "react-icons": "^5.5.0",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18"
   },

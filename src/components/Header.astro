@@ -1,13 +1,31 @@
 ---
 import { ModeToggle } from "./ModeToggle.tsx";
+import IconLight from "./iconLight.astro";
+import IconDark from "./iconDark.astro";
 ---
 
 <header>
-  <nav class="p-4 border-b flex justify-between items-center">
-    <ul class="flex space-x-4">
+  <nav class="px-4 h-[4em] border-b flex justify-between items-center">
+    <ul class="flex flex-1 space-x-4 font-heading">
       <li><a href="/about" class="hover:underline">about</a></li>
       <li><a href="/projects" class="hover:underline">projects</a></li>
+      <li><a href="/contact" class="hover:underline">contact</a></li>
     </ul>
-    <ModeToggle client:load />
+
+    <div class="flex items-center margin-auto">
+      <a href="/" class="flex items-center justify-center hover:scale-105 transition-transform">
+        <div class="block dark:hidden">
+          <IconLight />
+        </div>
+
+        <div class="hidden dark:block">
+          <IconDark />
+        </div>
+      </a>
+    </div>
+
+    <div class="flex-1 flex justify-end">
+      <ModeToggle client:load />
+    </div>
   </nav>
 </header>
