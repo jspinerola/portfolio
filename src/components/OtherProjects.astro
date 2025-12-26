@@ -1,4 +1,20 @@
-<div>
-  placeholder for when I make this lol. will be a fun carousel of other projects
+---
+import ProjectCard from "./ProjectCard.astro";
+---
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <ProjectCard
+    projectTitle={"ToddAI"}
+    projectDescription={"My personal blog, where I write about various topics such as programming, technology, and other interests of mine."}
+    heroImage={"/projects/toddai/screenshot-toddai.png"}
+    link={"./"}
+    accentColor={"#008FFF"}
+  />
+  <ProjectCard
+    projectTitle={"ToddAI"}
+    projectDescription={"testing technology, and other interests of mine."}
+    heroImage={"/projects/toddai/screenshot-toddai.png"}
+    link={"./"}
+    accentColor={"#008FFF"}
+  />
 </div>
-<p>also add a "back to all projects" button</p>

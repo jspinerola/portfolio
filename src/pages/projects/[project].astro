@@ -111,23 +111,18 @@ const accentStyle = { "--accent": project.data.accentColor };
               project.data.githubLink && (
                 <LinkButton
                   href={project.data.githubLink}
-                  className="font-mono lowercase"
                   variant="outline"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  View Source Code <ArrowUpRight />
+                  View Source Code
                 </LinkButton>
               )
             }
             {
               project.data.liveLink && (
-                <LinkButton
-                  href={project.data.liveLink}
-                  target="_blank"
-                  className="font-mono lowercase"
-                >
-                  View Deployed Project <ArrowUpRight />
+                <LinkButton href={project.data.liveLink} target="_blank">
+                  View Deployed Project
                 </LinkButton>
               )
             }
