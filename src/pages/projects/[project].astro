@@ -18,6 +18,7 @@ type Props = { project: CollectionEntry<"projects"> };
 
 const { project } = Astro.props as Props;
 const { Content } = await render(project);
+const accentStyle = { "--accent": project.data.accentColor };
 ---
 
 <BaseLayout
@@ -25,9 +26,14 @@ const { Content } = await render(project);
   description={project.data.description}
 >
   <main>
-    <div class="hero w-full h-[45vh] bg-accent border-b"></div>
+    <div class="hero w-full h-[45vh] bg-accent border-b z-10"></div>
     <div class="content container mx-auto my-8 px-4">
-      <div class="header flex flex-col space-x-4 mb-6">
+      <div class="header flex flex-col space-x-4 mb-6 relative">
+        <div
+          class={`absolute left-1/2 top-0 -translate-y-1/2 -translate-x-1/2 w-full h-16 rounded-full bg-accent blur-3xl pointer-events-none -z-10 opacity-40`}
+          style={accentStyle}
+        >
+        </div>
         <a
           href="/projects"
           class="text-sm text-muted-foreground font-mono underline items-center hover:underline block w-fit mb-4"

@@ -9,18 +9,16 @@ heroImage: /images/test1-hero.png
 githubLink: https://github.com/example/test1
 liveLink: https://example.com/test1
 collaborators:
-  - name: Alice Smith
+  - name: Christian Moran
     github: https://github.com/alicesmith
     role: Frontend Developer
-  - name: Bob Johnson
+  - name: Jacob Reeves
     github: https://github.com/bobjohnson
     role: Backend Developer
-  - name: Carol Lee
+  - name: Obed valencia
     github: https://github.com/carollee
     role: DevOps Engineer
-  - name: David Kim
-    github: https://github.com/davidkim
-    role: QA Engineer
+accentColor: "#008FFF"
 ---
 
 ## Overview
