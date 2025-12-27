@@ -51,7 +51,7 @@ function ProjectCard({
           </div>
         </div>
         <CardFooter className="z-10">
-          <LinkButton className="btn w-full" href={link} target="_blank">
+          <LinkButton className="btn w-full" href={link}>
             View Project
           </LinkButton>
         </CardFooter>
