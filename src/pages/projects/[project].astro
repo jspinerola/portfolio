@@ -71,36 +71,31 @@ const accentStyle = { "--accent": project.data.accentColor };
                   }
                 </span>
               </div>
-              <div
-                class="flex gap-2 text-sm text-muted-foreground items-center"
-              >
-                <Users size={"1em"} />
-                <span class="flex font-mono">
-                  <span>me</span>
+              <div class="flex gap-2 text-sm text-muted-foreground items-start">
+                <div class="mt-0.5">
+                  <Users size={"1em"} />
+                </div>
 
-                  {
-                    project.data.collaborators &&
-                    project.data.collaborators.length > 0
-                      ? ",\u00A0"
-                      : ""
-                  }
-                  {
+                <p class="font-mono leading-relaxed">
+                  <span>me</span>{
+                    (project.data.collaborators?.length ?? 0) > 0 && ", "
+                  }{
+                    /* 2. Map the rest. Note: No spaces between tags and curly braces! */
                     project.data.collaborators?.map(
                       (collaborator, idx, arr) => (
-                        <>
+                        <Fragment>
                           {collaborator.github ? (
-                            <a href={collaborator.github} class="underline">
-                              {collaborator.name}
-                            </a>
+                            // prettier-ignore
+                            <a href={collaborator.github} target="_blank" rel="noopener noreferrer" class="underline hover:text-foreground transition-colors">{collaborator.name.trim()}</a>
                           ) : (
-                            collaborator.name
+                            <span>{collaborator.name.trim()}</span>
                           )}
-                          {idx < arr.length - 1 && ",\u00A0"}
-                        </>
+                          {idx < arr.length - 1 && ", "}
+                        </Fragment>
                       )
                     )
                   }
-                </span>
+                </p>
               </div>
             </div>
           </div>
