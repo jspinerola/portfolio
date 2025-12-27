@@ -1,0 +1,29 @@
+---
+import "../styles/global.css";
+// Component Imports
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Prose from "@/components/Prose.astro";
+import { Content } from "../content/about.md";
+import LinkButton from "@/components/LinkButton";
+---
+
+<BaseLayout
+  title="Home - Astro + TailwindCSS"
+  description="Welcome to my portfolio website built with Astro and TailwindCSS."
+>
+  <main class="container mx-auto my-8 px-4">
+    <h1
+      class="text-2xl md:text-3xl lg:text-4xl font-black font-heading uppercase mb-4"
+    >
+      About Me
+    </h1>
+    <Prose>
+      <Content />
+    </Prose>
+    <div class="actions mt-8 flex gap-4 justify-center">
+      <LinkButton href="/" variant={"secondary"}> Home </LinkButton>
+      <LinkButton href="/projects"> View My Projects </LinkButton>
+    </div>
+  </main>
+</BaseLayout>

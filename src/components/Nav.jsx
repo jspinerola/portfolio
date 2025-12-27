@@ -14,7 +14,7 @@ function Nav() {
   const navItems = [
     { name: "About", href: "/about" },
     { name: "Projects", href: "/projects" },
-    { name: "Contact", href: "/contact" },
+    { name: "Contact", href: "mailto:julianspindola@gmail.com" },
   ];
 
   return (

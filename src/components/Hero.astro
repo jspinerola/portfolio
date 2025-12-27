@@ -3,6 +3,9 @@ import { Button } from "@/components/ui/button";
 import { ArrowUpRight, Github } from "lucide-react";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 import { FaLinkedin, FaEnvelope } from "react-icons/fa";
+import SocialButtons from "./SocialButtons.astro";
+import ButtonLink from "@/components/LinkButton.tsx";
+import LinkButton from "@/components/LinkButton.tsx";
 ---
 
 <!-- // TODO: simplify to one single iconlibary -->
@@ -20,33 +23,13 @@ import { FaLinkedin, FaEnvelope } from "react-icons/fa";
         Julian<br />Spindola
       </h1>
       <div class="content flex flex-col md:items-end items-center space-y-4">
-        <div class="button-group flex space-x-2">
-          <Button
-            variant="outline"
-            size="icon"
-            aria-label="View GitHub profile"
-          >
-            <SiGithub title="GitHub" />
-          </Button>
-          <Button
-            variant="outline"
-            size="icon"
-            aria-label="View LinkedIn profile"
-          >
-            <FaLinkedin title="LinkedIn" />
-          </Button>
-          <Button variant="outline" size="icon" aria-label="Send Email">
-            <FaEnvelope title="Email" />
-          </Button>
-        </div>
+        <SocialButtons />
 
         <div class="links flex gap-2">
-          <Button className="font-mono lowercase">
-            About Me <ArrowUpRight />
-          </Button>
-          <Button className="font-mono lowercase">
-            View Projects <ArrowUpRight />
-          </Button>
+          <LinkButton href="/about"> About Me </LinkButton>
+          <LinkButton href="/projects">
+            View Projects
+          </LinkButton>
         </div>
       </div>
     </div>

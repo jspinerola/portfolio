@@ -1,0 +1,39 @@
+---
+import { Button } from "@/components/ui/button";
+import { SiGithub } from "@icons-pack/react-simple-icons";
+import { FaLinkedin, FaEnvelope } from "react-icons/fa";
+import LinkButton from "./LinkButton";
+---
+
+<div class="button-group flex space-x-2">
+  <LinkButton
+    href="https://github.com/jspinerola"
+    variant="outline"
+    size="icon"
+    aria-label="View GitHub profile"
+    target="_blank"
+    showIcon={false}
+  >
+    <SiGithub title="GitHub" />
+  </LinkButton>
+  <LinkButton
+    href="https://www.linkedin.com/in/jspindola/"
+    variant="outline"
+    size="icon"
+    aria-label="View LinkedIn profile"
+    target="_blank"
+    showIcon={false}
+  >
+    <FaLinkedin title="LinkedIn" />
+  </LinkButton>
+  <LinkButton
+    href="mailto:julianspindola@gmail.com"
+    variant="outline"
+    size="icon"
+    aria-label="Send Email"
+    target="_blank"
+    showIcon={false}
+  >
+    <FaEnvelope title="Email" />
+  </LinkButton>
+</div>

@@ -34,22 +34,23 @@ function Projects({ projects, allTags }: ProjectsProps) {
     return [];
   });
 
-  // 1. searching logic
   const filteredProjects = useMemo(() => {
+    // 1. searching logic
     return projects.filter((project) => {
       const matchesSearch = project.data.title
         .toLowerCase()
         .includes(search.toLowerCase());
 
+      // 2. filtering logic
       if (selectedTags.length === 0) {
         return matchesSearch;
       }
 
-      // OR logic for tags
       const matchesTags = selectedTags.some((tag) =>
         project.data.tags?.includes(tag)
       );
 
+      // if both search and tags match, return true
       return matchesSearch && matchesTags;
     });
   }, [projects, search, selectedTags]);
