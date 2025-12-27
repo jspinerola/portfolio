@@ -61,9 +61,11 @@ const accentStyle = { "--accent": project.data.accentColor };
               }
             </ul>
             <div
-              class="flex gap-2 lg:gap-6 items-center lg:flex-row flex-col lg:justify-start md:items-start"
+              class="flex gap-2 lg:gap-6 lg:flex-row flex-col lg:justify-start"
             >
-              <div class="flex gap-2 text-sm text-muted-foreground">
+              <div
+                class="flex gap-2 text-sm text-muted-foreground items-center"
+              >
                 <Calendar size={"1em"} />
                 <span class="flex gap-2 font-mono">
                   {project.data.startDate}{
@@ -71,7 +73,9 @@ const accentStyle = { "--accent": project.data.accentColor };
                   }
                 </span>
               </div>
-              <div class="flex gap-2 text-sm text-muted-foreground items-start">
+              <div
+                class="flex gap-2 text-sm text-muted-foreground items-center"
+              >
                 <div class="mt-0.5">
                   <Users size={"1em"} />
                 </div>
