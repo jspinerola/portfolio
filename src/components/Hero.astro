@@ -6,12 +6,13 @@ import { FaLinkedin, FaEnvelope } from "react-icons/fa";
 import SocialButtons from "./SocialButtons.astro";
 import ButtonLink from "@/components/LinkButton.tsx";
 import LinkButton from "@/components/LinkButton.tsx";
+import HeroAnimation from "@/components/HeroAnimation.astro";
 ---
 
 <!-- // TODO: simplify to one single iconlibary -->
 <div class="h-[calc(100vh-4rem)] min-h-128 w-full flex flex-col">
   <div class="w-full h-[65%] md:h-[75%]">
-    Placeholder Hero Component (for now...)
+    <HeroAnimation />
   </div>
   <div class="w-full h-[35%] md:h-[25%] border-t">
     <div
@@ -27,9 +28,7 @@ import LinkButton from "@/components/LinkButton.tsx";
 
         <div class="links flex gap-2">
           <LinkButton href="/about"> About Me </LinkButton>
-          <LinkButton href="/projects">
-            View Projects
-          </LinkButton>
+          <LinkButton href="/projects"> View Projects </LinkButton>
         </div>
       </div>
     </div>
