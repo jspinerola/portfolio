@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/card";
 import React from "react";
 import LinkButton from "./LinkButton";
+import Tag from "./Tag";
 
 function ProjectCard({
   projectTitle,
@@ -14,6 +15,7 @@ function ProjectCard({
   heroImage,
   link,
   accentColor,
+  tags,
 }) {
   return (
     <div>
@@ -46,6 +48,16 @@ function ProjectCard({
               <CardTitle className="text-2xl font-extrabold font-heading">
                 {projectTitle}
               </CardTitle>
+              <ul className="flex my-2 space-x-2 flex-wrap w-full justify-center">
+                {tags?.map((tech) => (
+                  <a
+                    title={`View All ${tech} projects`}
+                    href={`/projects?tags=${encodeURIComponent(tech)}`}
+                  >
+                    <Tag title={tech} />
+                  </a>
+                ))}
+              </ul>
               <CardDescription>{projectDescription}</CardDescription>
             </CardContent>
           </div>

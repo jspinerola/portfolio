@@ -28,7 +28,15 @@ function Projects({ projects, allTags }: ProjectsProps) {
 
   const [selectedTags, setSelectedTags] = useState<string[]>(() => {
     if (typeof window !== "undefined") {
-      const tags = new URLSearchParams(window.location.search).getAll("tags");
+      const params = new URLSearchParams(window.location.search);
+      const tagsParam = params.get("tags");
+      if (tagsParam) {
+        return tagsParam
+          .split(",")
+          .map((tag) => decodeURIComponent(tag.trim()));
+      }
+      // Fallback to getAll for legacy support
+      const tags = params.getAll("tags");
       return tags;
     }
     return [];
@@ -78,10 +86,11 @@ function Projects({ projects, allTags }: ProjectsProps) {
 
   return (
     <>
-      <div className="search-header flex flex-col md:flex-row gap-4 md:gap-12 mb-8">
+      <div className="search-header flex flex-col md:flex-row gap-4 md:gap-12 mb-8 h-full">
         <div className="flex-1 flex flex-col gap-2">
           <Label className="font-heading">Search Projects</Label>
           <Input
+            className="h-10"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Filter projects..."
@@ -90,10 +99,11 @@ function Projects({ projects, allTags }: ProjectsProps) {
         <div className="flex-1 flex flex-col gap-2">
           <Label className="font-heading">Filter by Tags</Label>
           <MultiSelect values={selectedTags} onValuesChange={setSelectedTags}>
-            <MultiSelectTrigger className="w-full">
+            <MultiSelectTrigger className="w-full h-10">
               <MultiSelectValue
                 placeholder="Select frameworks..."
                 clickToRemove={true}
+                overflowBehavior={"wrap"}
               />
             </MultiSelectTrigger>
             <MultiSelectContent>
@@ -117,6 +127,7 @@ function Projects({ projects, allTags }: ProjectsProps) {
             heroImage={project.data.heroImage}
             link={"/projects/" + project.id}
             accentColor={project.data.accentColor}
+            tags={project.data.tags}
           />
         ))}
       </div>
