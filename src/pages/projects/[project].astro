@@ -16,6 +16,7 @@ import { Calendar, Users, ArrowUpRight } from "lucide-react";
 import LinkButton from "@/components/LinkButton.tsx";
 import Prose from "@/components/Prose.astro";
 import Tag from "@/components/Tag";
+import H1 from "@/components/H1.astro";
 type Props = { project: CollectionEntry<"projects"> };
 
 const { project } = Astro.props as Props;
@@ -46,11 +47,13 @@ const accentStyle = { "--accent": project.data.accentColor };
           class="w-full flex md:flex-row flex-col md:items-center md:justify-between gap-6"
         >
           <div class="flex-2">
-            <h1
+            <H1
+              lowercase={true}
+              animated={true}
               class="text-2xl md:text-3xl lg:text-4xl font-black font-heading"
             >
               {project.data.title}
-            </h1>
+            </H1>
             <p class="">{project.data.description}</p>
             <ul class="flex my-2 space-x-2 flex-wrap">
               {

@@ -18,7 +18,7 @@ function ProjectCard({
   tags,
 }) {
   return (
-    <div>
+    <div className="project-card opacity-0">
       <Card
         className={`
       group relative overflow-hidden rounded-xl h-full pt-0 justify-between

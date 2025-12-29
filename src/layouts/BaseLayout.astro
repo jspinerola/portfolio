@@ -13,7 +13,7 @@ const { title, description } = Astro.props as Props;
 const isHome = Astro.url.pathname === "/";
 ---
 
-<ThemeScript />
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -22,9 +22,35 @@ const isHome = Astro.url.pathname === "/";
     <meta name="description" content={description} />
     <title>{title}</title>
   </head>
+  <ThemeScript />
   <body>
     <Header />
     <slot />
     {!isHome && <Footer />}
   </body>
+  <script>
+    import { gsap } from "gsap";
+    import { SplitText } from "gsap/SplitText";
+
+    gsap.registerPlugin(SplitText);
+
+    document.fonts.ready.then(() => {
+      console.log("Fonts loaded");
+      const headings = document.querySelectorAll("h1.isAnimated");
+
+      headings.forEach((heading) => {
+        console.log("Animating heading:", heading);
+        const split = new SplitText(heading, { type: "words" });
+        gsap.set(heading, { autoAlpha: 1 });
+        gsap.set(split.words, { opacity: 0, y: 25 });
+        gsap.to(split.words, {
+          duration: 0.5,
+          opacity: 1,
+          y: 0,
+          stagger: { amount: 0.1, ease: "power2.out" }, // 'power2' usually needs .out or .in
+        });
+      });
+    });
+  </script>
+
 </html>

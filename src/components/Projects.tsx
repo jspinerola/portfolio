@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import ProjectCard from "./ProjectCard.jsx";
 import type { CollectionEntry } from "astro:content";
 import {
@@ -11,6 +11,9 @@ import {
 } from "@/components/ui/multi-select";
 import { Label } from "./ui/label.js";
 import { Input } from "./ui/input.js";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
 interface ProjectsProps {
   projects: CollectionEntry<"projects">[];
   allTags: string[];
@@ -84,6 +87,40 @@ function Projects({ projects, allTags }: ProjectsProps) {
     return () => clearTimeout(timer);
   }, [search, selectedTags]);
 
+  // animation for project cards
+  gsap.registerPlugin(useGSAP);
+
+  const containerRef = useRef<HTMLDivElement>(null);
+  const hasAnimated = useRef(false);
+
+  useGSAP(
+    () => {
+      if (projects.length === 0) return;
+
+      const cards = gsap.utils.toArray(".project-card");
+      console.log("Animating project cards:", cards);
+      if (hasAnimated.current) {
+        gsap.set(cards, { autoAlpha: 1, y: 0 });
+        return;
+      }
+
+      gsap.to(cards, {
+        opacity: 1,
+        y: 0,
+        startAt: { opacity: 0, y: 20 },
+        stagger: 0.1,
+        duration: 0.6,
+        ease: "power2.out",
+      });
+
+      hasAnimated.current = true;
+    },
+    {
+      scope: containerRef,
+      dependencies: [filteredProjects],
+    }
+  );
+
   return (
     <>
       <div className="search-header flex flex-col md:flex-row gap-4 md:gap-12 mb-8 h-full">
@@ -118,7 +155,10 @@ function Projects({ projects, allTags }: ProjectsProps) {
           </MultiSelect>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div
+        ref={containerRef}
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
         {filteredProjects.map((project, index) => (
           <ProjectCard
             // key={index}
