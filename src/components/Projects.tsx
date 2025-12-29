@@ -164,7 +164,7 @@ function Projects({ projects, allTags }: ProjectsProps) {
             // key={index}
             projectTitle={project.data.title}
             projectDescription={project.data.description}
-            heroImage={project.data.heroImage}
+            heroImage={project.data.heroImage?.src}
             link={"/projects/" + project.id}
             accentColor={project.data.accentColor}
             tags={project.data.tags}

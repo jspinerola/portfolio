@@ -4,8 +4,8 @@ description: Custom Python-based program that implements a hybrid transport prot
 startDate: November 2025
 # endDate:
 tags: [Python, Networks]
-thumbnailImage: /images/test1-thumbnail.png
-heroImage: /images/test1-hero.png
+# thumbnailImage: /images/test1-thumbnail.png
+heroImage: "../../assets/projects/headless-video-player-hero.png"
 githubLink: https://github.com/AndCplusplus/VideoPlayer-CNproject
 # liveLink: https://www.julianspindola.com
 collaborators:
@@ -16,4 +16,5 @@ collaborators:
   - name: Oscar Lesage
 accentColor: "#FFD43B"
 ---
+
 Content soon to come!

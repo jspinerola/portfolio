@@ -4,8 +4,8 @@ description: This website, lol.
 startDate: December 2025
 # endDate:
 tags: [Featured, Astro, React, ShadCN/Tailwind]
-thumbnailImage: /images/test1-thumbnail.png
-heroImage: /images/test1-hero.png
+# thumbnailImage: /images/test1-thumbnail.png
+heroImage: "../../assets/projects/portfolio-hero.png"
 githubLink: https://github.com/jspinerola/portfolio
 liveLink: https://www.julianspindola.com
 # collaborators:

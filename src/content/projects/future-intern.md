@@ -4,8 +4,8 @@ description: Full-stack app aimed to assist students in their internship search 
 startDate: May 2025
 endDate: December 2025
 tags: [PHP, MySQL, CRON]
-thumbnailImage: /images/test1-thumbnail.png
-heroImage: /images/test1-hero.png
+# thumbnailImage: /images/test1-thumbnail.png
+heroImage: "../../assets/projects/future-intern-hero.png"
 # githubLink: https://github.com/acm-tamusa/jaghacks
 liveLink: https://apps.tamusa.edu/future-intern
 collaborators:

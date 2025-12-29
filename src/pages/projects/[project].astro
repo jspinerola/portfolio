@@ -29,7 +29,13 @@ const accentStyle = { "--accent": project.data.accentColor };
   description={project.data.description}
 >
   <main>
-    <div class="hero w-full h-[45vh] bg-accent border-b z-10 opacity-50"></div>
+    <div class="hero w-full h-[45vh] bg-accent border-b z-10">
+      <img
+        src={project.data.heroImage?.src}
+        alt={`${project.data.title} Hero Image`}
+        class="w-full h-full object-cover"
+      />
+    </div>
     <div class="content container mx-auto my-8 px-4">
       <div class="header flex flex-col space-x-4 mb-6 relative">
         <div

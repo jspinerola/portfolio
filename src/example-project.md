@@ -4,8 +4,8 @@ description: This is a dummy project for testing purposes.
 startDate: May 1900
 endDate: June 2025
 tags: [Featured, React, Java script, Powershell]
-thumbnailImage: /images/test1-thumbnail.png
-heroImage: /images/test1-hero.png
+# thumbnailImage: /images/test1-thumbnail.png
+# heroImage: "../../projects/portfolio-hero.png"
 githubLink: https://github.com/example/test1
 liveLink: https://example.com/test1
 collaborators:
