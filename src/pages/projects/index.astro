@@ -5,10 +5,16 @@ import Projects from "@/components/Projects.tsx";
 import H1 from "@/components/H1.astro";
 
 const projects = await getCollection("projects");
-const sortedProjects = projects.sort(
-  (a, b) =>
+const sortedProjects = projects.slice().sort((a, b) => {
+  const aFeatured = a.data.tags?.includes("Featured") ? 1 : 0;
+  const bFeatured = b.data.tags?.includes("Featured") ? 1 : 0;
+  if (aFeatured !== bFeatured) {
+    return bFeatured - aFeatured; // Featured projects first
+  }
+  return (
     new Date(b.data.startDate).getTime() - new Date(a.data.startDate).getTime()
-);
+  );
+});
 
 const allTags = new Set<string>();
 projects.forEach((project) => {
