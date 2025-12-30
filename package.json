@@ -9,11 +9,14 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/markdoc": "^0.15.10",
     "@astrojs/mdx": "^4.3.13",
     "@astrojs/react": "^4.4.2",
     "@fontsource-variable/outfit": "^5.2.8",
     "@gsap/react": "^2.1.2",
     "@icons-pack/react-simple-icons": "^13.8.0",
+    "@keystatic/astro": "^5.0.6",
+    "@keystatic/core": "^0.5.48",
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-label": "^2.1.8",
     "@radix-ui/react-popover": "^1.1.15",

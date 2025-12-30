@@ -161,7 +161,7 @@ function Projects({ projects, allTags }: ProjectsProps) {
       >
         {filteredProjects.map((project, index) => (
           <ProjectCard
-            // key={index}
+            key={index}
             projectTitle={project.data.title}
             projectDescription={project.data.description}
             heroImage={project.data.heroImage?.src}

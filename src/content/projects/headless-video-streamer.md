@@ -1,7 +1,7 @@
 ---
 title: Headless Video Streamer
 description: Custom Python-based program that implements a hybrid transport protocol for real-time video streaming, utilizing a reliable Stop-and-Wait mechanism for control signals and standard UDP for low-latency video delivery.
-startDate: November 2025
+startDate: 2025-11-01
 # endDate:
 tags: [Python, Networks]
 # thumbnailImage: /images/test1-thumbnail.png

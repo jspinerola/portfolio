@@ -1,15 +1,16 @@
 ---
 title: julianspindola.com
 description: This website, lol.
-startDate: December 2025
-# endDate:
-tags: [Featured, Astro, React, ShadCN/Tailwind]
-# thumbnailImage: /images/test1-thumbnail.png
-heroImage: "../../assets/projects/portfolio-hero.png"
+startDate: 2025-12-27
+tags:
+  - Featured
+  - Astro
+  - React
+  - ShadCN/Tailwind
+collaborators: []
+heroImage: ../../assets/projects/portfolio/heroImage.png
 githubLink: https://github.com/jspinerola/portfolio
 liveLink: https://www.julianspindola.com
-# collaborators:
-accentColor: "#9D00FF"
+accentColor: '#9D00FF'
 ---
-
 Content soon to come!

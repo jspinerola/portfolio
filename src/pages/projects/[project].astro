@@ -22,6 +22,17 @@ type Props = { project: CollectionEntry<"projects"> };
 const { project } = Astro.props as Props;
 const { Content } = await render(project);
 const accentStyle = { "--accent": project.data.accentColor };
+
+const formatDate = (dateStr: string, full: boolean = false): string => {
+  if (!dateStr) return "";
+  const date = new Date(dateStr);
+  return date.toLocaleString("en-US", {
+    ...(full ? { day: "numeric" } : {}),
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+};
 ---
 
 <BaseLayout
@@ -80,9 +91,22 @@ const accentStyle = { "--accent": project.data.accentColor };
                 class="flex gap-2 text-sm text-muted-foreground items-center"
               >
                 <Calendar size={"1em"} />
-                <span class="flex gap-2 font-mono">
-                  {project.data.startDate}{
-                    project.data.endDate && " - " + project.data.endDate
+                <span
+                  class="flex gap-2 font-mono"
+                  title={project.data.endDate
+                    ? `${formatDate(
+                        project.data.startDate.toString(),
+                        true
+                      )} - ${formatDate(project.data.endDate.toString(), true)}`
+                    : `Started on ${formatDate(
+                        project.data.startDate.toString(),
+                        true
+                      )}`}
+                >
+                  {formatDate(project.data.startDate.toString())}{
+                    project.data.endDate
+                      ? ` - ${formatDate(project.data.endDate.toString())}`
+                      : ""
                   }
                 </span>
               </div>

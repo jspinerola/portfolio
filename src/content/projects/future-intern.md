@@ -1,8 +1,8 @@
 ---
 title: Future Intern
 description: Full-stack app aimed to assist students in their internship search by providing searchable active and historical internship data.
-startDate: May 2025
-endDate: December 2025
+startDate: 2025-05-01
+endDate: 2025-12-15
 tags: [PHP, MySQL, CRON]
 # thumbnailImage: /images/test1-thumbnail.png
 heroImage: "../../assets/projects/future-intern-hero.png"
