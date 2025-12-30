@@ -57,9 +57,12 @@ function ProjectCard({
                   >
                     <Tag title={tech} />
                   </a>
-                ))}
+                ))} 
                 {tags && tags.length > 4 && (
-                  <Tag title={`+${tags.length - 4} more`} />
+                  <Tag
+                    className="pointer-events-none"
+                    title={`+${tags.length - 4}`}
+                  />
                 )}
               </ul>
               <CardDescription>{projectDescription}</CardDescription>

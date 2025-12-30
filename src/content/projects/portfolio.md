@@ -7,10 +7,12 @@ tags:
   - Astro
   - React
   - ShadCN/Tailwind
+  - Keystatic CMS
 collaborators: []
 heroImage: ../../assets/projects/portfolio/heroImage.png
 githubLink: https://github.com/jspinerola/portfolio
 liveLink: https://www.julianspindola.com
-accentColor: '#9D00FF'
+accentColor: "#9D00FF"
 ---
+
 Content soon to come!

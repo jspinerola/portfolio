@@ -10,6 +10,8 @@ tags:
   - Python
   - FastAPI
   - Gemini API
+  - React
+  - ShadCN/Tailwind
 collaborators:
   - name: Kevin Hernandez Garcia
     github: https://github.com/Alke-14
@@ -20,6 +22,7 @@ collaborators:
 heroImage: ../../assets/projects/pywizard/heroImage.png
 githubLink: https://github.com/jspinerola/pywizard
 liveLink: https://pywizard-one.vercel.app/
-accentColor: '#494BC4'
+accentColor: "#494BC4"
 ---
+
 Content coming soon!

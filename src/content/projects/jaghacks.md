@@ -3,7 +3,7 @@ title: JagHacks Website
 description: Platform for ACM-TAMUSA's on-campus hackathon.
 startDate: 2025-11-20
 # endDate:
-tags: [React, Resend, ShadCN/Tailwind]
+tags: [React, Resend, ShadCN/Tailwind, Mailchimp]
 # thumbnailImage: /images/test1-thumbnail.png
 heroImage: "../../assets/projects/jaghacks-hero.png"
 githubLink: https://github.com/acm-tamusa/jaghacks

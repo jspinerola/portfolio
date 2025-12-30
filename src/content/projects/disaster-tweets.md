@@ -9,6 +9,8 @@ tags:
   - Machine Learning
   - BERT
   - Classification
+  - Natural Language Processing
+  - Convolutional Neural Network
 collaborators:
   - name: Abigail Amiscosa
     github: https://github.com/abiamis07

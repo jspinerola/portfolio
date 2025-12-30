@@ -10,6 +10,7 @@ tags:
   - ElevenLabs
   - FastAPI
   - ShadCN/Tailwind
+  - React
 collaborators:
   - name: Kevin Hernandez Garcia
     github: https://github.com/Alke-14

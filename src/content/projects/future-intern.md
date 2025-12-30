@@ -3,7 +3,7 @@ title: Future Intern
 description: Full-stack app aimed to assist students in their internship search by providing searchable active and historical internship data.
 startDate: 2025-05-01
 endDate: 2025-12-15
-tags: [PHP, MySQL, CRON]
+tags: [Featured, PHP, MySQL, CRON, Chart.js, Bootstrap]
 # thumbnailImage: /images/test1-thumbnail.png
 heroImage: "../../assets/projects/future-intern-hero.png"
 # githubLink: https://github.com/acm-tamusa/jaghacks
