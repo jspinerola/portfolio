@@ -49,14 +49,18 @@ function ProjectCard({
                 {projectTitle}
               </CardTitle>
               <ul className="flex my-2 space-x-2 flex-wrap w-full justify-center">
-                {tags?.map((tech) => (
+                {tags?.slice(0, 4).map((tech, index) => (
                   <a
+                    key={tech}
                     title={`View All ${tech} projects`}
                     href={`/projects?tags=${encodeURIComponent(tech)}`}
                   >
                     <Tag title={tech} />
                   </a>
                 ))}
+                {tags && tags.length > 4 && (
+                  <Tag title={`+${tags.length - 4} more`} />
+                )}
               </ul>
               <CardDescription>{projectDescription}</CardDescription>
             </CardContent>
