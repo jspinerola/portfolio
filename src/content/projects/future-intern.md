@@ -9,7 +9,8 @@ heroImage: "../../assets/projects/future-intern-hero.png"
 # githubLink: https://github.com/acm-tamusa/jaghacks
 liveLink: https://apps.tamusa.edu/future-intern
 collaborators:
-  - name: Xander Maurray
+  - name: Xander Murray
+  - github: https://github.com/Xander-Murray
   - name: Joshua Ibrom
   - name: Joey Gonzales
 accentColor: "#740F2F"

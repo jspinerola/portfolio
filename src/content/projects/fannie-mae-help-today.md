@@ -3,8 +3,8 @@ title: Fannie Mae Help Today
 description: >-
   Application intended to help prospective homebuyers determine their
   eligibility for Fannie Mae mortgage loans
-startDate: 2024-11-03
-endDate: 2024-11-04
+startDate: 2023-11-03
+endDate: 2023-11-04
 tags:
   - HackUTD
   - HTML/CSS/JS
@@ -16,6 +16,7 @@ collaborators:
   - name: Ruben Reyes
     github: https://github.com/rubenreyy
 heroImage: ../../assets/projects/fannie-mae-help-today/heroImage.png
-accentColor: '#0962ba'
+accentColor: "#0962ba"
 ---
+
 Content coming soon!
