@@ -10,6 +10,8 @@ tags:
   - Spring Boot
   - JUnit
   - Jest
+  - Java
+  - Object-Oriented Programming
   - JPMorgan Chase
 collaborators: []
 heroImage: ../../assets/projects/jpmconnect/heroImage.png
