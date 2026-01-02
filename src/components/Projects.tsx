@@ -123,40 +123,64 @@ function Projects({ projects, allTags }: ProjectsProps) {
 
   return (
     <>
-      <div className="search-header flex flex-col md:flex-row gap-4 md:gap-12 mb-8 h-full">
-        <div className="flex-1 flex flex-col gap-2">
-          <Label className="font-heading">Search Projects</Label>
-          <Input
-            className="h-10"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder="Filter projects..."
-          />
+      <div className="search-header mb-4">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-12 mb-4  h-full">
+          <div className="flex-1 flex flex-col gap-2">
+            <Label className="font-heading">Search Projects</Label>
+            <Input
+              className="h-10"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Filter projects..."
+            />
+          </div>
+          <div className="flex-1 flex flex-col gap-2">
+            <Label className="font-heading">Filter by Tags</Label>
+            <MultiSelect values={selectedTags} onValuesChange={setSelectedTags}>
+              <MultiSelectTrigger
+                className="w-full h-10"
+                aria-label="Select Tags"
+              >
+                <MultiSelectValue
+                  placeholder="Select Tags..."
+                  clickToRemove={true}
+                  overflowBehavior={"wrap"}
+                />
+              </MultiSelectTrigger>
+              <MultiSelectContent>
+                <MultiSelectGroup>
+                  {allTags.map((tag) => (
+                    <MultiSelectItem key={tag} value={tag}>
+                      {tag}
+                    </MultiSelectItem>
+                  ))}
+                </MultiSelectGroup>
+              </MultiSelectContent>
+            </MultiSelect>
+          </div>
         </div>
-        <div className="flex-1 flex flex-col gap-2">
-          <Label className="font-heading">Filter by Tags</Label>
-          <MultiSelect values={selectedTags} onValuesChange={setSelectedTags}>
-            <MultiSelectTrigger
-              className="w-full h-10"
-              aria-label="Select Tags"
-            >
-              <MultiSelectValue
-                placeholder="Select Tags..."
-                clickToRemove={true}
-                overflowBehavior={"wrap"}
-              />
-            </MultiSelectTrigger>
-            <MultiSelectContent>
-              <MultiSelectGroup>
-                {allTags.map((tag) => (
-                  <MultiSelectItem key={tag} value={tag}>
-                    {tag}
-                  </MultiSelectItem>
+        <span className="text-sm text-secondary-foreground font-heading">
+          {filteredProjects.length} projects found{" "}
+          {selectedTags.length > 0 || search ? `with ` : ""}
+          {search && (
+            <>
+              keywords matching <strong>"{search}"</strong>
+            </>
+          )}
+          {search && selectedTags.length > 0 && " and "}
+          {selectedTags.length > 0 && (
+            <>
+              tags{" "}
+              <strong>
+                {selectedTags.map((tag, i) => (
+                  <React.Fragment key={tag}>
+                    "{tag}"{i < selectedTags.length - 1 ? ", " : ""}
+                  </React.Fragment>
                 ))}
-              </MultiSelectGroup>
-            </MultiSelectContent>
-          </MultiSelect>
-        </div>
+              </strong>
+            </>
+          )}
+        </span>
       </div>
       <div
         ref={containerRef}
