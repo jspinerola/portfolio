@@ -11,7 +11,7 @@ tags:
   - JavaScript
   - jQuery
   - HTML
-  - Cascade
+  - Cascade CMS
 collaborators:
   - name: Joey Gonzales
 heroImage: ../../assets/projects/tuition-and-fees-calculator/heroImage.png
