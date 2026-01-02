@@ -75,12 +75,14 @@ const formatDate = (dateStr: string, full: boolean = false): string => {
             <ul class="flex my-2 space-x-2 flex-wrap">
               {
                 project.data.tags?.map((tech) => (
-                  <a
-                    title={`View All ${tech} projects`}
-                    href={`/projects?tags=${encodeURIComponent(tech)}`}
-                  >
-                    <Tag title={tech} />
-                  </a>
+                  <li>
+                    <a
+                      title={`View All ${tech} projects`}
+                      href={`/projects?tags=${encodeURIComponent(tech)}`}
+                    >
+                      <Tag title={tech} />
+                    </a>
+                  </li>
                 ))
               }
             </ul>

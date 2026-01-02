@@ -136,9 +136,12 @@ function Projects({ projects, allTags }: ProjectsProps) {
         <div className="flex-1 flex flex-col gap-2">
           <Label className="font-heading">Filter by Tags</Label>
           <MultiSelect values={selectedTags} onValuesChange={setSelectedTags}>
-            <MultiSelectTrigger className="w-full h-10">
+            <MultiSelectTrigger
+              className="w-full h-10"
+              aria-label="Select Tags"
+            >
               <MultiSelectValue
-                placeholder="Select frameworks..."
+                placeholder="Select Tags..."
                 clickToRemove={true}
                 overflowBehavior={"wrap"}
               />

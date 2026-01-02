@@ -50,19 +50,23 @@ function ProjectCard({
               </CardTitle>
               <ul className="flex my-2 space-x-2 flex-wrap w-full justify-center">
                 {tags?.slice(0, 4).map((tech, index) => (
-                  <a
-                    key={tech}
-                    title={`View All ${tech} projects`}
-                    href={`/projects?tags=${encodeURIComponent(tech)}`}
-                  >
-                    <Tag title={tech} />
-                  </a>
-                ))} 
+                  <li>
+                    <a
+                      key={tech}
+                      title={`View All ${tech} projects`}
+                      href={`/projects?tags=${encodeURIComponent(tech)}`}
+                    >
+                      <Tag title={tech} />
+                    </a>
+                  </li>
+                ))}
                 {tags && tags.length > 4 && (
-                  <Tag
-                    className="pointer-events-none"
-                    title={`+${tags.length - 4}`}
-                  />
+                  <li>
+                    <Tag
+                      className="pointer-events-none"
+                      title={`+${tags.length - 4}`}
+                    />
+                  </li>
                 )}
               </ul>
               <CardDescription>{projectDescription}</CardDescription>
