@@ -6,7 +6,6 @@ description: >-
 startDate: 2024-06-24
 endDate: 2024-09-01
 tags:
-  - Featured
   - Wordpress
   - Yoast SEO
   - HTML/CSS/JS

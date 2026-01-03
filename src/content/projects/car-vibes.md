@@ -6,6 +6,7 @@ description: >-
 startDate: 2025-11-08
 endDate: 2025-11-09
 tags:
+  - Featured
   - HackUTD
   - Gemini API
   - React

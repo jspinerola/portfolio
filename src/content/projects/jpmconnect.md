@@ -6,6 +6,7 @@ description: >-
 startDate: 2025-07-01
 endDate: 2025-07-25
 tags:
+  - Featured
   - React
   - Spring Boot
   - JUnit
