@@ -4,6 +4,7 @@ import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import ThemeScript from "../components/ThemeScript.astro";
+import GoogleAnalytics from "@/components/GoogleAnalytics.astro";
 interface Props {
   title: string;
   description: string | undefined;
@@ -22,6 +23,7 @@ const isHome = Astro.url.pathname === "/";
     <meta name="description" content={description} />
     <title>{title}</title>
   </head>
+  <GoogleAnalytics />
   <ThemeScript />
   <body>
     <Header />
@@ -52,5 +54,6 @@ const isHome = Astro.url.pathname === "/";
       });
     });
   </script>
+
 
 </html>
