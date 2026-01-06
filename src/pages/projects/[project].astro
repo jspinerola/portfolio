@@ -17,6 +17,7 @@ import LinkButton from "@/components/LinkButton.tsx";
 import Prose from "@/components/Prose.astro";
 import Tag from "@/components/Tag";
 import H1 from "@/components/H1.astro";
+import ImageHero from "@/components/ImageHero";
 type Props = { project: CollectionEntry<"projects"> };
 
 const { project } = Astro.props as Props;
@@ -40,13 +41,11 @@ const formatDate = (dateStr: string, full: boolean = false): string => {
   description={project.data.description}
 >
   <main>
-    <div class="hero w-full h-[45vh] bg-accent border-b z-10">
-      <img
-        src={project.data.heroImage?.src}
-        alt={`${project.data.title} Hero Image`}
-        class="w-full h-full object-cover"
-      />
-    </div>
+    <ImageHero
+      src={project.data.heroImage?.src}
+      alt={project.data.title}
+      client:load
+    />
     <div class="content container mx-auto my-8 px-4">
       <div class="header flex flex-col space-x-4 mb-6 relative">
         <div
