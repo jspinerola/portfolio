@@ -126,8 +126,11 @@ function Projects({ projects, allTags }: ProjectsProps) {
       <div className="search-header mb-4">
         <div className="flex flex-col md:flex-row gap-4 md:gap-12 mb-4  h-full">
           <div className="flex-1 flex flex-col gap-2">
-            <Label className="font-heading">Search Projects</Label>
+            <Label className="font-heading" htmlFor="search-projects">
+              Search Projects
+            </Label>
             <Input
+              id="search-projects"
               className="h-10"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
@@ -135,7 +138,9 @@ function Projects({ projects, allTags }: ProjectsProps) {
             />
           </div>
           <div className="flex-1 flex flex-col gap-2">
-            <Label className="font-heading">Filter by Tags</Label>
+            <Label className="font-heading" htmlFor="filter-tags">
+              Filter by Tags
+            </Label>
             <MultiSelect values={selectedTags} onValuesChange={setSelectedTags}>
               <MultiSelectTrigger
                 className="w-full h-10"
@@ -147,7 +152,7 @@ function Projects({ projects, allTags }: ProjectsProps) {
                   overflowBehavior={"wrap"}
                 />
               </MultiSelectTrigger>
-              <MultiSelectContent>
+              <MultiSelectContent label="steamy sex">
                 <MultiSelectGroup>
                   {allTags.map((tag) => (
                     <MultiSelectItem key={tag} value={tag}>
