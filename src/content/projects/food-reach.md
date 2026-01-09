@@ -14,6 +14,7 @@ collaborators:
     github: https://github.com/abiamis07
 heroImage: ../../assets/projects/food-reach/heroImage.png
 githubLink: https://github.com/jspinerola/dbmidterm
+liveLink: https://foodreach.streamlit.app
 accentColor: '#ef6e00'
 ---
 Content coming soon!
